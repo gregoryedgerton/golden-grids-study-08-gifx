@@ -1,3 +1,5 @@
+GIFcommit00007
+
 # Layout study — X's signed-in home and Explore, as GIFx
 
 **Live:** [`https://gregoryedgerton.github.io/golden-grids-study-08-x/`](https://gregoryedgerton.github.io/golden-grids-study-08-x/)
