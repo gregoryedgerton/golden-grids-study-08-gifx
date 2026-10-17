@@ -15,7 +15,7 @@ trends list; `src/content.ts` every post, fact and photograph record;
 (a copy of `captures/trends.json`). Read `docs/program/PROGRAM.md`, then
 `STUDY-BRIEF.md`, then `README.md`.
 
-Live at https://gregoryedgerton.github.io/golden-grids-study-08-x/;
+Live at https://gregoryedgerton.github.io/golden-grids-study-08-gifx/;
 pushing to `main` deploys.
 
 ## Rules that are not negotiable
@@ -311,3 +311,5 @@ twitter.com, a sign-in / log-in / sign-up / verify / password control or
 prompt, a subscription or Premium pitch with a price and a call to action, or
 Follow buttons. After deploying, request a review in Google Search Console
 (Security Issues) so the flag is lifted.
+
+- **Address (2026-10-17, Greg).** The repository moved from `golden-grids-study-08-x` to `golden-grids-study-08-gifx`, so the reference's name is no longer in the study's web address (a step against the Safe Browsing flag on the shared origin); the old address no longer serves anything.

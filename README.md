@@ -2,7 +2,7 @@ GIFcommit00007
 
 # Layout study — X's signed-in home and Explore, as GIFx
 
-**Live:** [`https://gregoryedgerton.github.io/golden-grids-study-08-x/`](https://gregoryedgerton.github.io/golden-grids-study-08-x/)
+**Live:** [`https://gregoryedgerton.github.io/golden-grids-study-08-gifx/`](https://gregoryedgerton.github.io/golden-grids-study-08-gifx/)
 
 An unaffiliated layout study. It rebuilds the structure of X's signed-in
 home (For you) and Explore (Trending) pages as stacked golden grids for
@@ -153,3 +153,5 @@ npm run dev
 `npm run build` type-checks and builds to `dist/`; pushing to `main` deploys
 to GitHub Pages. The library is consumed from npm at its published version,
 never linked locally.
+
+- **Address (2026-10-17, Greg).** The repository moved from `golden-grids-study-08-x` to `golden-grids-study-08-gifx`, so the reference's name is no longer in the study's web address (a step against the Safe Browsing flag on the shared origin); the old address no longer serves anything.
