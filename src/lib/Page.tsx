@@ -1,14 +1,17 @@
 import type { ReactNode } from "react";
 import { Tools } from "./tools";
 import { StudyBanner, StudyDisclosure } from "./study";
-import { CREDITS, DATELINE, DESKS, TRENDS, WHO_TO_FOLLOW, PREMIUM } from "../content";
+import { CREDITS, DATELINE, DESKS, TRENDS, WEEK, WHO_TO_FOLLOW } from "../content";
 
 /**
  * The signed-in shell, after the reference's three columns: a left rail of
  * destinations and a Post control, the page in the centre, and a right
- * rail of search, a subscription card, "What's happening" and "Who to
- * follow". At phone width the rail becomes a bottom tab bar and the right
- * rail folds under the page. GIFx is a fictional network; the trends
+ * rail of search, a card on the week's prizes (where the reference has its
+ * subscription card), "What's happening" and "Who to follow", which lists
+ * the desks without Follow buttons. Nothing in the shell asks the reader to
+ * subscribe, follow, sign up or sign in (CLAUDE.md, Safe Browsing
+ * remediation). At phone width the rail becomes a bottom tab bar and the
+ * right rail folds under the page. GIFx is a fictional network; the trends
  * are a real snapshot (captures/trends.json) and the posts are the
  * network's own desks.
  */
@@ -55,12 +58,17 @@ export function Page({ current, title, standfirst, children, rightFirst }: { cur
             <input id="q" type="search" placeholder="Search" autoComplete="off" />
           </form>
           {rightFirst}
-          <section className="card" aria-labelledby="premium-title">
-            <h2 id="premium-title" className="card__title">Subscribe to {PREMIUM.name}</h2>
-            <p className="card__text">{PREMIUM.pitch}</p>
-            <p className="card__price"><strong>{PREMIUM.price}</strong> {PREMIUM.period}</p>
-            <button type="button" className="btn btn--primary">{PREMIUM.cta}</button>
-            <p className="note">A fictional subscription; the button does nothing.</p>
+          <section className="card" aria-labelledby="nobelweek-title">
+            <h2 id="nobelweek-title" className="card__title">Nobel week</h2>
+            <ol className="trends">
+              {WEEK.map((d) => (
+                <li key={d.day}>
+                  <span className="trends__meta">{d.day} · {d.status}</span>
+                  <span className="trends__name">{d.prize}</span>
+                </li>
+              ))}
+            </ol>
+            <a className="card__more" href="./explore.html#week">Show more</a>
           </section>
           <section className="card" aria-labelledby="trends-title">
             <h2 id="trends-title" className="card__title">What's happening</h2>
@@ -80,8 +88,7 @@ export function Page({ current, title, standfirst, children, rightFirst }: { cur
               {WHO_TO_FOLLOW.map((d) => (
                 <li key={d.handle}>
                   <span className={`avatar avatar--${d.tone}`} aria-hidden="true">{d.initial}</span>
-                  <span className="follow__who"><strong>{d.name}</strong><span className="muted">@{d.handle}</span></span>
-                  <button type="button" className="btn btn--small" aria-label={`Follow ${d.name}`}>Follow</button>
+                  <span className="follow__who"><strong>{d.name}</strong><span className="muted">@{d.handle}</span><span className="follow__bio">{d.bio}</span></span>
                 </li>
               ))}
             </ul>
@@ -94,6 +101,7 @@ export function Page({ current, title, standfirst, children, rightFirst }: { cur
           <summary>Photograph credits</summary>
           <ul>{CREDITS.map((p) => <li key={p.src}><a href={p.page}>{p.alt}</a> — {p.credit}, {p.licence}.</li>)}</ul>
         </details>
+        <p><strong>Why nothing here links to X.</strong> The pages this study follows, X's home timeline and Explore, are named but not linked: both addresses send a signed-out visitor to X's sign-in, and a page styled after a network that links to that network's sign-in can be flagged as phishing by automated scanners, as the address this series is published at was in October 2026. The addresses are listed in the study's repository.</p>
         <p>Trends snapshot: {TRENDS.source}, {new Date(TRENDS.captured).toLocaleString("en-US", { dateStyle: "long", timeStyle: "short", timeZone: "America/New_York" })} Eastern.</p>
       </StudyDisclosure>
       <nav className="tabbar" aria-label="Sections, phone">

@@ -19,7 +19,9 @@ the [study template](https://github.com/gregoryedgerton/golden-grids-study-templ
 
 ## Reference
 
-X's web app, signed in, as of 2026: three columns at 1440 — a left rail
+X's web app, signed in, as of 2026 (home,
+[`https://x.com/home`](https://x.com/home); Explore,
+[`https://x.com/explore`](https://x.com/explore)): three columns at 1440 — a left rail
 (Home, Explore, Notifications, Messages, Bookmarks, Communities, Premium,
 Profile, a Post control), a 600px centre with the For you /
 Following tabs, a composer and the feed of posts (author line, text,
@@ -30,6 +32,11 @@ capture exists in `captures/`; the register (white, `#0f1419` text,
 `#536471` secondary, `#1d9bf0` blue, pills and 16px cards, the system
 face; "lights out" black in dark) is the app's long-documented one, not
 measured here.
+
+The pages name the reference but do not link to it, and no X address is in
+the build: both addresses send a signed-out visitor to X's sign-in, and a
+lookalike that links to a real sign-in reads as phishing to Google Safe
+Browsing (see Notes for review). The addresses above are kept here only.
 
 The topic is from the record: [`captures/trends.json`](captures/trends.json)
 is a public aggregator's snapshot of X's trends, worldwide and United
@@ -64,8 +71,10 @@ at 390 / 820 / 1440 (the centre column is 647px at 1440).
 | Explore · three posts | 1–5 · bottom · cw; 1–4 · right · ccw; 1–4 · left · ccw | as above | Soai, Kagan, Why it matters |
 
 Flat modules: the composer (posts nothing), the feed tabs, the right-rail
-cards (Premium, What's happening, Who to follow), the action rows (no
-counts; the buttons do nothing), and Explore's full trends list.
+cards (Nobel week where the reference has Premium, What's happening, and
+Who to follow as a list of the desks with their descriptions and no Follow
+buttons), the action rows (no counts; the buttons do nothing), and
+Explore's full trends list.
 
 ## The subject
 
@@ -110,6 +119,17 @@ Observations for whoever reviews this study, recorded without a verdict. Whether
 - **No engagement counts.** The reference prints them under every post; none exist here, so the action row shows controls only.
 - **Trends.** The snapshot has no post counts, which the reference shows under each trend.
 - **Fitted type.** With the 120px cap, a short post leaves room in a 647px square.
+- **Prompts removed after Google flagged the series (2026-10-17).** Google
+  Safe Browsing flagged the address the studies are published at as
+  deceptive; the first trigger was a demo bank sign-in in another study.
+  Nothing here ever collected or sent anything, but the disclosure linked to
+  `x.com/home` and `x.com/explore`, which send a signed-out visitor to X's
+  sign-in. The pages no longer link to X; the closing disclosure says why
+  ("Why nothing here links to X"), and the addresses are kept in this
+  README. The right rail's GIFx Premium card (a price, "Subscribe") is a
+  card on the week's prizes, and "Who to follow" lost its Follow buttons;
+  each desk's description stands in the row instead. The composer stays: it
+  says that it sends nothing.
 
 ## Disclosure
 

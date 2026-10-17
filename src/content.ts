@@ -175,8 +175,3 @@ export const OTHER_POSTS: Post[] = [
 ];
 
 export const WHO_TO_FOLLOW: Desk[] = [DESKS.science, DESKS.explain, DESKS.live];
-
-export const PREMIUM = {
-  name: "GIFx Premium", price: "$8", period: "a month", pitch: "Longer posts, an edit window, fewer promoted posts, and a share of the network's revenue for creators. Billed yearly.", cta: "Subscribe",
-  bullets: ["Edit for an hour after posting", "Half the promoted posts", "Posts up to 25,000 characters"],
-};

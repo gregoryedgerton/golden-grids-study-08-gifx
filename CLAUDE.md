@@ -166,9 +166,10 @@ README: the smallest line, and that no screen-reader user has tested it.
 - A post's text is the hero square; one orientation per post, cycled by
   position (`EVEN`/`ODD`), all eight across the two pages. Below desktop a
   five- or six-square post splits into two grids (`Grids`).
-- The composer, the Post control, Follow and Subscribe do nothing and say
-  so. Rail items the study does not build (Notifications, Messages, …) are
-  shown disabled, not as dead links.
+- The composer and the Post control do nothing and say so. There is no
+  Follow button and no subscription card (see Safe Browsing remediation).
+  Rail items the study does not build (Notifications, Messages, Premium, …)
+  are shown disabled, not as dead links.
 
 Two geometry rules, verified against source, that every band relies on:
 
@@ -279,3 +280,34 @@ opened in StackBlitz at `https://stackblitz.com/~/github.com/gregoryedgerton/gol
 - Do not append `?file=` to the `~/github.com` link; it made the IDE fail to
   start in testing. The classic `/github/` importer accepts `?file=` but waits
   on a WebSocket and can stall at "Cloning repo from GitHub".
+
+## Safe Browsing remediation (2026-10)
+
+On 2026-10-17 Google Safe Browsing flagged the whole origin
+`gregoryedgerton.github.io` as social engineering. The first trigger was a demo
+bank sign-in in study 19 (GIFbank); every study was then cleared of anything
+that *looks like* collecting credentials or personal data, signing in, paying,
+or linking to a real login-walled page. Nothing was ever collected here; the
+heuristic reads appearance, so appearance is what changed.
+
+**What changed**
+- No X address is in the build. `study.json` names the two reviewed pages
+  without `url` (they were `x.com/home` and `x.com/explore`, both of which
+  send a signed-out visitor to X's sign-in); the disclosure says why ("Why
+  nothing here links to X", passed to `StudyDisclosure` from `Page.tsx`); the
+  README keeps the addresses. This is an exception to the program's rule that
+  the notice and disclosure link the reference. Check: `grep -rE
+  "x\.com|twitter\.com" dist` finds nothing (the `twitter:card` meta tag
+  is a tag name, not an address).
+- The right rail's subscription card (GIFx Premium, "$8 a month",
+  "Subscribe") is a "Nobel week" card listing `WEEK` from `content.ts`, with
+  Show more to Explore's week band. `PREMIUM` is gone from `content.ts`.
+- "Who to follow" lists the desks with their `bio`; the Follow buttons are
+  gone.
+- The composer stays: it says it sends nothing, and it is not a sign-in.
+
+**Do not** bring back, in this study or a sibling: a link to x.com or
+twitter.com, a sign-in / log-in / sign-up / verify / password control or
+prompt, a subscription or Premium pitch with a price and a call to action, or
+Follow buttons. After deploying, request a review in Google Search Console
+(Security Issues) so the flag is lifted.
